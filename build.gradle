@@ -1,0 +1,34 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.db:karma-db:0.1'
+	}
+}
+apply plugin: 'java'
+
+
+//repositories {
+//mavenLocal()
+  //  jcenter()
+//}
+
+
+
+dependencies {
+}
+//buildscript.configurations.classpath.each { println it.name }
+
+project.plugins.each {
+	println it
+}
+println"------------------------------------------------------"
+allprojects {
+	repositories {
+		mavenLocal()
+	}
+apply plugin: 'karma-test'
+	
+}

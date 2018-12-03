@@ -1,0 +1,5 @@
+rootProject.name = 'MultiProjectSample'
+
+include 'ProjectWithoutKarma'
+include 'ProjectWithKarma1'
+include 'ProjectWithKarma2'
