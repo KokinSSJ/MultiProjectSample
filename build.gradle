@@ -2,19 +2,16 @@ buildscript {
 	repositories {
 		mavenLocal()
 		mavenCentral()
+		jcenter()
+		maven {
+      		url "https://plugins.gradle.org/m2/"
+		}
 	}
 	dependencies {
 		classpath 'com.db:karma-db:0.1'
 	}
 }
 apply plugin: 'java'
-
-
-//repositories {
-//mavenLocal()
-  //  jcenter()
-//}
-
 
 
 dependencies {
@@ -29,6 +26,22 @@ allprojects {
 	repositories {
 		mavenLocal()
 	}
-apply plugin: 'karma-test'
+	apply plugin: 'java'
+	apply plugin: 'karma-test'
+	node {
+		version = '8.11.3'
+		//version = '6.12.0'
+		npmVersion = '5.6.0'
+		//npmVersion = '3.10.10'
+		download = true
+		
+		// Set the work directory for unpacking node
+		workDir = file("${rootProject.projectDir}/../nodejs")
+		
+		// Set the work directory for NPM
+		npmWorkDir = file("${rootProject.projectDir}/../npm")
 	
+		// Set the work directory where node_modules should be located
+		nodeModulesDir = file("${rootProject.projectDir}")
+	}
 }
