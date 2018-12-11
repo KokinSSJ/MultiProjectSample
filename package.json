@@ -9,6 +9,7 @@
     "phantomjs": "*",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
-    "karma-junit-reporter": "*"
+    "karma-junit-reporter": "*",
+    "karma-spec-reporter": "*"
   }
 }

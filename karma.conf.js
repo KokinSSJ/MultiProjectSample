@@ -14,7 +14,7 @@ function mergeFilesWithArgv(staticFiles) {
 			}); 
 		}    
     });  
-	console.log("Actual sources: ");
+	console.log("KARMA Actual sources: ");
 	console.log(source);
     return source;
 
@@ -26,9 +26,7 @@ config.set({
     "colors": true,
     "logLevel": "INFO",
     "files": mergeFilesWithArgv([
-        "jquery.js",
-        "webapp/resources/**/*.js" ,
-        "js-spec/**/*test.js"
+        "jquery.js"
     ]),
     "browsers": [
         "PhantomJS" 
@@ -38,10 +36,17 @@ config.set({
     ],
     "reporters": [
         "junit",
-        "progress"
+        "spec"
     ],
     "preprocessors": {
         
+    },
+    "specReporter": {
+        maxLogLines: 5, 
+        suppressFailed: false, 
+        suppressPassed: true, 
+        showSpecTiming: false,  
+        failFast: false  
     },
     "exclude": [
         
